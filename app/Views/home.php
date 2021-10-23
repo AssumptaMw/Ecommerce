@@ -8,7 +8,7 @@
             <div class="col-md-4 col-12 "></div>
 
             <div class="col-md-4 col-12 text-center ">
-                <h2 class="my-md-3 site-title">ManSan Boutique Ecommerce!</h2>
+                <h2 class="my-md-3 site-title">ManSan Boutique</h2>
             </div>
             <div class="col-md-4 col-12 text-end ">
                 <p class="my-md-4 header-links">
