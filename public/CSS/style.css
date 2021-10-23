@@ -1,0 +1,311 @@
+/*import fonts from google fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato:wght@100&family=Roboto:wght@300&family=Sofia&display=swap");
+
+:root {
+    --light-blue: #64dfdf;
+    --light-gray: #2b3032a1;
+    --text-color: #ff686b;
+    --roboto: "Roboto", sans-serif;
+    --gugi: "Gugi", cursive;
+    --sofia: "Sofia", cursive;
+}
+
+.light-gray {
+    color: var(--light-gray);
+}
+
+.bg-primary-color {
+    background-color: var(--light-blue) !important;
+}
+
+.text-color {
+    color: var(--text-color);
+}
+
+.font-roboto {
+    font-family: var(--roboto);
+}
+
+/*---everything---*/
+/* html,body{
+    margin: 0;
+    padding: 0;
+} */
+
+
+
+/*header*/
+
+header {
+    background-color: var(--light-blue);
+    font-family: var(--roboto);
+}
+
+header .site-title {
+    font-family: var(--gugi);
+}
+
+.header-links a {
+    font-size: 0.9em;
+    text-decoration: none;
+    color: black;
+}
+
+/*Navigation Menu*/
+
+.navbar-nav {
+    padding: 0.8em 0em;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--light-gray) !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    padding: 0 1.3em;
+}
+
+.navbar-nav .cart-icon {
+    margin-right: 6.5rem !important;
+}
+.fa-search,
+.fa-shopping-cart {
+    position: relative;
+}
+.num-cart-product {
+    position: absolute;
+    top: -17px;
+    right: -17px;
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    background-color: #fdbb04;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+}
+
+
+.carousel-item img{
+    min-height: 100vh;
+    position: relative;
+    height: auto;
+    border: 0;
+}
+
+
+/*-----Below Fold Categories ------*/
+.row{
+    justify-content: space-between;
+}
+
+.specials {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+
+.special-col {
+    flex: 1 0 0;
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    /* display: inline-block; */
+}
+.specials .card {
+    width: 110%;
+    background: #fff3f3;
+    padding: 0.7rem;
+    border: none;
+    justify-content: space-between;
+}
+.specials img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.specials .card:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+.below-fold {
+    font-family: "Raleway", sans-serif;
+}
+
+.below-fold-men {
+    display: flex;
+    justify-content: space-around;
+}
+
+.below-fold-men-images {
+    width: 33%;
+    transform: scale(0.9);
+}
+
+h1.below-fold {
+    color: rgb(34, 33, 33);
+    text-align: center;
+    margin-top: 2%;
+}
+
+.below-fold-wears {
+    display: flex;
+    width: 96%;
+    margin-left: 2%;
+}
+
+h2.below-fold-official {
+    margin-left: 12%;
+    margin-right: 10%;
+    background: rgb(0, 195, 255);
+    margin-bottom: 0;
+}
+
+h2.below-fold-casual {
+    margin-left: 15%;
+    background: rgb(231, 179, 7);
+    margin-bottom: 0;
+}
+
+h2.below-fold-sports {
+    margin-left: 27%;
+    background: rgb(10, 168, 5);
+    margin-bottom: 0;
+}
+
+.below-fold-ladies {
+    display: flex;
+}
+
+.visit-btn {
+    margin-left: 44.6%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.4rem;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+h1.below-fold-ladies {
+    color: rgb(34, 33, 33);
+    margin-top: 2%;
+    margin-left: 41.5%;
+}
+
+h1.below-fold-kids {
+    color: rgb(34, 33, 33);
+    margin-top: 2%;
+    margin-left: 41.5%;
+}
+
+h1.below-fold-pets {
+    color: rgb(34, 33, 33);
+    margin-top: 2%;
+    margin-left: 41.5%;
+}
+
+/* Footer */
+footer {
+    margin-top: 4%;
+    padding: 0.3rem 0;
+    background: black;
+}
+
+footer .column_open {
+    color: #ffffff;
+}
+
+footer .icons {
+    color: #ffffff;
+}
+
+footer .icons a {
+    color: #64dfdf;
+}
+
+footer .icons a:hover {
+    background: rgb(211, 172, 172);
+    transition: 1s;
+}
+
+footer .column_news {
+    color: #64dfdf;
+}
+
+footer .info {
+    padding: 0 7rem;
+}
+
+footer .info li {
+    padding: 0.2rem;
+    list-style-type: none;
+}
+
+footer .news input {
+    display: block;
+    width: 100%;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+footer .news button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #64dfdf;
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    background-color: #fdbb04;
+}
+
+footer .copy .column p {
+    text-align: center;
+    color: #777;
+}
+
+.icon .fa {
+    color: #64dfdf;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+.column1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 0;
+    height: 10vh;
+    color: #ffffff;
+}
+
+.rows {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
