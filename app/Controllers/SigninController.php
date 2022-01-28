@@ -1,23 +1,24 @@
-<?php 
+<?php
 
-namespace App\Controllers;  
+namespace App\Controllers;
+
 use CodeIgniter\Controller;
 use App\Models\UserModel;
-  
+use CodeIgniter\HTTP\RedirectResponse;
+
 
 class SigninController extends Controller
 {
-    public function index()
+    public function index(): string|RedirectResponse
     {
-        if (session()->get('isLoggedIn'))
-        {
+        if (session()->get('isLoggedIn')) {
             return redirect()
                 ->to('/');
         }
         return view('login');
-    } 
+    }
 
-    public function loginAuth()
+    public function loginAuth(): bool|string
     {
         $session = session();
 
@@ -25,32 +26,29 @@ class SigninController extends Controller
 
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
-        
+
         $data = $userModel->where('email', $email)->first();
-        
-        if($data){
+
+        if ($data) {
             $pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
-            if($authenticatePassword){
+            if ($authenticatePassword) {
                 unset($data['password']);
                 $sessionData = $data;
                 $sessionData['isLoggedIn'] = TRUE;
 
-
                 $session->set($sessionData);
-                return redirect()->to('/');
-            
-            }else{
-                $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->to('/login');
+                return json_encode(['status' => true, 'view' => view('home')]);
+            } else {
+                return json_encode(['status' => false, 'message' => 'Password is incorrect.']);
             }
-
-        }else{
-            $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->to('/login');
+        } else {
+            return json_encode(['status' => false, 'message' => 'Email does not exist.']);
         }
     }
-    public function logout(){
+
+    public function logout()
+    {
         session()->destroy();
         return redirect()->to('/login');
     }

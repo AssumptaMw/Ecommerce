@@ -13,16 +13,15 @@ body{
 
 
 label{
-	margin-left: 8%;
-	margin-top: 8%;
+	margin-left: 3%;
 	display: inline-block;
 	font-size: 20px;
 }
 
 
 .container {
-    width: 350px;
-    min-height: 400px;
+    width: 400px;
+    min-height: 500px;
     background: #FFF;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
@@ -44,7 +43,7 @@ label{
 .container .login-email .input-group {
     width: 100%;
     height: 40px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
 }
 
 .container .login-email .input-group input {
@@ -103,4 +102,15 @@ label{
     .container .login-social a {
         display: block;
     }
+}
+
+
+label.error.fail-alert {
+    line-height: 1;
+    padding: 2px 0 8px 6px;
+    color:red;
+}
+input.valid.success-alert {
+    border: 2px solid #4CAF50;
+    color: green;
 }

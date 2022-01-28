@@ -6,16 +6,14 @@ use CodeIgniter\Model;
   
 class UserModel extends Model{
 
-    protected $table = 'users';
-    
+    protected $table = 'tbl_users';
+    protected $primaryKey = 'user_id';
     protected $allowedFields = [
-        'firstname',
-        'lastname',
-        'username',
+        'first_name',
+        'last_name',
         'gender',
         'email',
-        'password',
-        'created_at'
+        'password'
     ];
 
 }
