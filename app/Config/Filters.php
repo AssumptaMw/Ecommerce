@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\AuthGuard;
+use App\Filters\JWTAuthenticationFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -17,10 +18,11 @@ class Filters extends BaseConfig
      * @var array
      */
     public $aliases = [
-        'csrf'     => CSRF::class,
-        'toolbar'  => DebugToolbar::class,
-        'honeypot' => Honeypot::class,
-        'authGuard' => AuthGuard::class
+        'csrf'      => CSRF::class,
+        'toolbar'   => DebugToolbar::class,
+        'honeypot'  => Honeypot::class,
+        'authGuard' => AuthGuard::class,
+        'auth'      => JWTAuthenticationFilter::class
     ];
 
     /**
@@ -34,7 +36,7 @@ class Filters extends BaseConfig
             // 'honeypot',
             // 'csrf',
         ],
-        'after' => [
+        'after'  => [
             'toolbar',
             // 'honeypot',
         ],
@@ -60,5 +62,9 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'auth' => [
+            'before' => ['api/users*', 'api/products*'],
+        ]
+    ];
 }

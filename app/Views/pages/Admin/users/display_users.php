@@ -20,7 +20,7 @@
 
             <div class="card-body py-0 border-top">
                 <div class="d-flex justify-content-end">
-                    <a href="<?php echo site_url('/user-form') ?>" class="btn btn-success mb-2 mt-2" >Add User</a>
+                    <a href="/add_user" class="btn btn-success mb-2 mt-2" >Add User</a>
                 </div>
 
                 <div class="mt-3">

@@ -50,13 +50,15 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-$routes->get('(:any)', 'Pages::view/$1');
 $routes->get('/', 'Home::index', ['as'=>'home']);
 $routes->get('/login', 'SigninController::index', ['as'=>'login']);
 $routes->get('/logout', 'SigninController::logout', ['as'=>'logout']);
 $routes->post('/login', 'SigninController::loginAuth',['as'=>'login']);
 $routes->get('/register', 'SignupController::index', ['as'=>'register']);
 $routes->post('/register', 'SignupController::store',['as'=>'register']);
+$routes->get('/add_user', 'UserController::create');
+$routes->get('/users', 'UserController::index');
+//  $routes->get('(:any)', 'Pages::view/$1'); //  This is a bad idea.
 
 // CRUD RESTful Routes
 $routes->get('users-list', 'UserController::index');
@@ -65,3 +67,12 @@ $routes->post('submit-form', 'UserController::store');
 $routes->get('edit-view/(:num)', 'UserController::singleUser/$1');
 $routes->post('update', 'UserController::update');
 $routes->get('delete/(:num)', 'UserController::delete/$1');
+
+
+//API ROUTES
+$routes->group('/api', ['namespace' => 'App\Controllers\API'], function($routes) {
+    $routes->post('login', 'AuthController::login');
+    $routes->post('register', 'AuthController::register');
+    $routes->get('users', 'UserController::index');
+    $routes->get('users/(:num)', 'UserController::show/$1');
+});

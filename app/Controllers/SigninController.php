@@ -12,9 +12,9 @@ class SigninController extends Controller
     public function index(): string|RedirectResponse
     {
         if (session()->get('isLoggedIn')) {
-            return redirect()
-                ->to('/');
+            return redirect()->to('/');
         }
+
         return view('login');
     }
 

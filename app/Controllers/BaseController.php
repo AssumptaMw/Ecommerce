@@ -7,6 +7,8 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Validation\Exceptions\ValidationException;
+use Config\Services;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -48,5 +50,10 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+    }
+
+    public function getResponse(array $responseBody, int $code = ResponseInterface::HTTP_OK): ResponseInterface
+    {
+        return $this->response->setStatusCode($code)->setJSON($responseBody);
     }
 }

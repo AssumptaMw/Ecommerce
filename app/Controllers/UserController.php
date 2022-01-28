@@ -11,12 +11,13 @@ class UserController extends Controller{
     public function index(){
         $userModel = new UserModel();
         $data['users'] = $userModel->orderBy('user_id', 'ASC')->findAll();
-        return view('../../Views/Admin/users/user_view', $data);
+
+        return view('pages/Admin/users/display_users', $data);
     }
 
     // add user form
     public function create(){
-        return view('../../Views/pages/add_user');
+        return view('pages/Admin/users/add_user');
     }
 
     // insert data
@@ -37,11 +38,11 @@ class UserController extends Controller{
         }else{
             echo "ANYTHING";
         }
-        print_r($data);
+
         $userModel->insert($data);
         $data['users'] = $userModel->orderBy('user_id', 'ASC')->findAll();
-        return view('../Views/pages/display_users', $data);
-        //return $this->response->redirect(site_url('/users-list'));
+
+        return $this->response->redirect('/users');
     }
 
     // show single user
