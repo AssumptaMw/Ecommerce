@@ -68,6 +68,11 @@ $routes->get('edit-view/(:num)', 'UserController::singleUser/$1');
 $routes->post('update', 'UserController::update');
 $routes->get('delete/(:num)', 'UserController::delete/$1');
 
+//CATEGORIES
+$routes->get('users-list', 'CategoryController::index');
+$routes->get('/add_cat', 'CategoryController::create');
+$routes->post('submit-form', 'CategoryController::store');
+
 
 //API ROUTES
 $routes->group('/api', ['namespace' => 'App\Controllers\API'], function($routes) {

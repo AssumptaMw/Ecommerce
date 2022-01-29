@@ -4,7 +4,6 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Exception;
 
-
 class UserModel extends Model{
 
     protected $table = 'tbl_users';
@@ -17,6 +16,7 @@ class UserModel extends Model{
         'password',
         'role'
     ];
+
 
     /**
      * @throws Exception
