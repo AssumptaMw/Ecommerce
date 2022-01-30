@@ -73,6 +73,49 @@ class ProductController extends Controller{
         return view('Views/pages/Admin/product/edit_prod', $data);
     }
 
+    public function edit_validation(){
+
+        helper(['form','url']);
+
+        $error = $this->validate([
+            'product_name' => 'required|minlength[3]',
+            'subcategory_id' => 'required|minlength[3]',
+            'unit_price' => 'required',
+            'available_quantity' => 'required',
+            'product_image' => 'required',
+            'description' => 'required'
+
+        ]);
+
+        if(!$error)
+        {
+            echo view('Views/pages/Admin/products/edit_prod', [
+                'error' => $this->validator
+            ]);
+        }
+        else{
+            $productModel = new ProductModel();
+            $id = $this->request->getVar('product_id');
+
+            $data = [
+                'product_name'=> $this->request->getVar('product_name'),
+                'subcategory_id' => $this->request->getVar('subcategory_id'),
+                'unit_price' => $this->request->getVar('product_price'),
+                'available_quantity' => $this->request->getVar('product_stock'),
+                'product_image' => $this->request->getVar('product_image'),
+                'description' => $this->request->getVar('product_desc')
+            ];
+
+            $productModel->update($id, $data);
+
+            $session = \Config\Services::sesssion();
+
+            $session->setFlashdata('success', 'Product Updated');
+
+            return $this->response->redirect(site_url("/"));
+        }
+    }
+
     //update product
     public function update(){
         $userModel = new ProductModel();
