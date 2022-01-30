@@ -25,18 +25,19 @@ class SubCategoryController extends Controller{
         $userModel = new SubCategory();
         $data = [
             'subcategory_name' => $this->request->getVar('subcatname'),
-            'category' => $this->request->getVar('catname')
+            'category' => $this->request->getVar('category')
         ];
 
-//        if($data['category']=='Men'){
-//            $data['category']= 1;
-//        }elseif($data['category']=='Women') {
-//            $data['category'] = 2;
-//        }elseif($data['category']=='Children') {
-//            $data['category'] = 3;
-//        }else {
-//            $data['category'] = 4;
-//        }
+        if($data['category']=='Men'){
+            $data['category']= 1;
+        }elseif($data['category']=='Women') {
+            $data['category'] = 2;
+        }elseif($data['category']=='Children') {
+            $data['category'] = 3;
+        }else {
+            $data['category'] = 4;
+        }
+        //print_r($data);
 
         $userModel->insert($data);
         $data['subcategory'] = $userModel->orderBy('subcategory_id', 'ASC')->findAll();

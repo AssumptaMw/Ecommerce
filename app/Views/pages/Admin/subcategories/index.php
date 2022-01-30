@@ -20,7 +20,7 @@
 
             <div class="card-body py-0 border-top">
                 <div class="d-flex justify-content-end">
-                    <a href="/add_user" class="btn btn-success mb-2 mt-2" >Add Category</a>
+                    <a href="/add_subcat" class="btn btn-success mb-2 mt-2" >Add Subcategory</a>
                 </div>
 
                 <div class="mt-3">
