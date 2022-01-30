@@ -72,6 +72,7 @@ $routes->get('delete/(:num)', 'UserController::delete/$1');
 $routes->get('/add_cat', 'CategoryController::create');
 $routes->get('/category', 'CategoryController::index');
 $routes->post('submit-form', 'CategoryController::store');
+$routes->post('update', 'CategoryController::update');
 
 //SUBCATEGORIES ROUTES
 $routes->get('/add_subcat', 'SubCategoryController::create');

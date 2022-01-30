@@ -27,16 +27,17 @@ class ProductController extends Controller{
         $data = [
             'product_name' => $this->request->getVar('product_name'),
             'subcategory_id' => $this->request->getVar('subcategory_id'),
-            'price' => $this->request->getVar('price'),
-            'stock' => $this->request->getVar('stock'),
+            'price' => $this->request->getVar('product_price'),
+            'stock' => $this->request->getVar('product_stock'),
             'image' => $this->request->getVar('image'),
-            'description' => $this->request->getVar('description')
+            'description' => $this->request->getVar('product_desc')
         ];
 
-        $userModel->insert($data);
-        $data['products'] = $userModel->orderBy('product_id', 'ASC')->findAll();
-
-        return $this->response->redirect('/products');
+        print_r($data);
+//        $userModel->insert($data);
+//        $data['products'] = $userModel->orderBy('product_id', 'ASC')->findAll();
+//
+//        return $this->response->redirect('/products');
     }
 
     //update product

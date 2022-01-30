@@ -27,7 +27,7 @@ if($role == 1){
 <div class="row justify-content-center">
     <div class="col-6 mt-5">
         <form class="booking row g-3 shadow-lg p-3 mb-5 bg-body rounded" method="post" id="add_create" name="add_create"
-              action="<?php echo base_url('/UserController/update'); ?>">
+              action="<?php echo base_url('/UserController/edit_validation'); ?>">
             <h2 style="text-align: center">Edit User</h2>
             <div class="form-group col-md-6">
                 <label for="inputFname" class="form-label"><i class="icon-prepend fa fa-user"></i>&nbsp;First Name</label>
@@ -63,6 +63,7 @@ if($role == 1){
             </div>
 
             <div class="form-group">
+                <input type="hidden" name="user_id" value="'<?= $user_obj['user_id'];?>">
                 <button type="submit" class="btn btn-primary btn-block">Update Changes</button>
             </div>
         </form>

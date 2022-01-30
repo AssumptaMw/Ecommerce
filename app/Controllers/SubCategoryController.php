@@ -45,6 +45,47 @@ class SubCategoryController extends Controller{
         return $this->response->redirect('/subcategory');
     }
 
+    public function fetch_single_data($id = null)
+    {
+        $subcategoryModel = new SubCategory();
+        $data['subcategory_obj'] = $subcategoryModel->where('subcategory_id', $id)->first();
+        return view('Views/pages/Admin/subcategories/edit_subcat', $data);
+    }
+
+    public function edit_validation(){
+
+        helper(['form','url']);
+
+        $error = $this->validate([
+            'subcategory_name' => 'required|minlength[3]',
+            'category' => 'required',
+            'description' => 'required|minlength[3]'
+        ]);
+
+        if(!$error)
+        {
+            echo view('Views/pages/Admin/subcategories/edit_subcat', [
+                'error' => $this->validator
+            ]);
+        }
+        else{
+            $subcategoryModel = new SubCategory();
+            $id = $this->request->getVar('subcategory_id');
+
+            $data = [
+                'subcategory_name'=> $this->request->getVar('subcategory_name'),
+            ];
+
+            $subcategoryModel->update($id, $data);
+
+            $session = \Config\Services::sesssion();
+
+            $session->setFlashdata('success', 'SubCategory Updated');
+
+            return $this->response->redirect(site_url("/"));
+        }
+    }
+
     // update subcategory data
     public function update(){
         $userModel = new SubCategory();

@@ -43,7 +43,7 @@
                             <td><?php echo $subcategory['subcategory_name']; ?></td>
                             <td><?php echo $subcategory['category']; ?></td>
                             <td>
-                                <a href="<?php echo base_url('edit_subcat/'.$subcategory['subcategory_id'].'/'.$subcategory['subcategory_name'].'/'.$subcategory['category']);?>" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="<?php echo base_url('SubCategoryController/fetch_single_data/'.$subcategory['subcategory_id'].'/'.$subcategory['subcategory_name'].'/'.$subcategory['category']);?>" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="<?php echo base_url('delete/'.$subcategory['subcategory_id']);?>" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>

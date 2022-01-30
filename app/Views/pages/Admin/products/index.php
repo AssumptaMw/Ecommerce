@@ -1,12 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Product View</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
+<?= $this->extend('/dashboard/dashboardStart');?>
+<?= $this->section('content');?>
+
 <div class="row justify-content-center">
     <div class="container mt-4">
         <div class="card bg-body rounded">
@@ -69,6 +63,8 @@
         $('#users-list').DataTable();
     } );
 </script>
-</body>
-</html>
+
+<?= $this->endSection();?>
+<?= $this->extend('/dashboard/dashboardEnd');?>
+
 

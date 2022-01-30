@@ -40,6 +40,11 @@ class SignupController extends Controller
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
 
+
+            if($data['role'] == 1){
+
+            }
+
             $userModel->save($data);
 
             //return json_encode(['status' => true, 'view' => view('login')]);

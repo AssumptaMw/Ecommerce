@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/style2.css">
     <link rel="stylesheet" href="CSS/owl-carousel.css">
+    <link rel="stylesheet" href="CSS/dashboard.css">
 <!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
 
 

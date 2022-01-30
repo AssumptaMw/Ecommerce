@@ -1,29 +1,19 @@
-<?= $this->extend('Layouts/master');?>
+<?= $this->extend('pages/Admin/dashboard/dashboardStart') ?>
 <?= $this->section('content');?>
 
 <div class="row justify-content-center">
-    <div class="col-6 mt-5">
+    <div class="col-6" style="margin-top: 6rem;">
         <form class="booking row g-3 shadow-lg p-3 mb-5 bg-body rounded" method="post" id="add_create" name="add_create"
               action="<?php echo base_url('/ProductController/store'); ?>">
-            <h2 style="text-align: center">Add a New User</h2>
+            <h2 class="col-md-10" style="text-align: center">Add a New Product</h2>
             <div class="form-group col-md-6">
                 <label for="inputProdname" class="form-label">Product Name</label>
                 <input type="text" name="product_name" class="form-control">
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label" for="sub_category_id">Category</label>
-                <select name="subcategory_id" id="subcategory_id" class="form-control">
-                    <option selected hidden value="">Choose a category </option>
-                    <?php foreach($products as $product): ?>
-                    <optgroup label="<?= $category->name ?>">
-                        <?php foreach($category->subCategories as $subCategory): ?>
-                            <?php $selected = isset($product) && $product->subcategory_id == $subCategory->id ? 'selected' : '' ?>
-                            <option <?= $selected ?>
-                                value="<?= $subCategory->id ?>"><?= $subCategory->name ?></option>
-                        <?php endforeach; ?>
-                        <?php endforeach; ?>
-                </select>
+                <label class="form-label" for="sub_category_id">Subcategory</label>
+                <input type="number" name="subcategory_id" class="form-control">
             </div>
 
             <div class="form-group col-md-6">
@@ -41,9 +31,9 @@
                 <input type="file" class="form-control" name="image" id="image" aria-describedby="emailHelp">
             </div>
 
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-10">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name="product_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
 
             <div class="form-group">
@@ -93,7 +83,7 @@
                     minlength: "Name should be at least 3 characters"
                 },
                 subcategory_id: {
-                    required: "Please choose a category",
+                    required: "Please choose a subcategory",
                 },
                 price: {
                     required: "Please enter price ",
@@ -115,4 +105,5 @@
     }
 </script>
 <?= $this->endSection();?>
+
 

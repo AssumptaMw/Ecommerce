@@ -1,14 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Users View</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
+<?= $this->extend('pages/Admin/dashboard/dashboardStart') ?>
+<?= $this->section('content');?>
+
 <div class="row justify-content-center">
-    <div class="container mt-4">
+    <div class="container" style="margin-top: 8rem;">
         <div class="card bg-body rounded">
             <div class="card-header">
                 <div class="row flex-between-end">
@@ -47,7 +41,7 @@
                                     <td><?php echo $user['gender']; ?></td>
                                     <td><?php echo $user['role']; ?></td>
                                     <td>
-                                        <a href="<?php echo base_url('UserController/test/'.$user['user_id'].'/'.$user['first_name'].'/'.$user['last_name'].'/'.$user['email'].'/'.$user['gender'].'/'.$user['role']);?>" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="<?php echo base_url('UserController/fetch_single_data/'.$user['user_id'].'/'.$user['first_name'].'/'.$user['last_name'].'/'.$user['email'].'/'.$user['gender'].'/'.$user['role']);?>" class="btn btn-primary btn-sm">Edit</a>
                                         <a href="<?php echo base_url('delete/'.$user['user_id']);?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
@@ -69,7 +63,6 @@
         $('#users-list').DataTable();
     } );
 </script>
-</body>
-</html>
+<?= $this->endSection();?>
 
 

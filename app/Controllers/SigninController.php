@@ -38,7 +38,14 @@ class SigninController extends Controller
                 $sessionData['isLoggedIn'] = TRUE;
 
                 $session->set($sessionData);
+//                if($data['role'] == 1){
+//                    return json_encode(['status' => true, 'view' => view('add_users')]);
+//                }else{
+//                    return json_encode(['status' => true, 'view' => view('home')]);
+//                }
+
                 return json_encode(['status' => true, 'view' => view('home')]);
+
             } else {
                 return json_encode(['status' => false, 'message' => 'Password is incorrect.']);
             }

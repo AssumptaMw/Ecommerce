@@ -40,10 +40,8 @@
                                 <tr>
                                     <td><?php echo $category['category_id']; ?></td>
                                     <td><?php echo $category['category_name']; ?></td>
-<!--                                    <td>--><?php //echo $user['last_name']; ?><!--</td>-->
-<!--                                    <td>--><?php //echo $user['email']; ?><!--</td>-->
                                     <td>
-                                        <a href="<?php echo base_url('edit_cat/'.$category['category_id'].'/'.$category['category_name']);?>" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="<?php echo base_url('CategoryController/fetch_single_data/'.$category['category_id'].'/'.$category['category_name']);?>" class="btn btn-primary btn-sm">Edit</a>
                                         <a href="<?php echo base_url('delete/'.$category['category_id']);?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>

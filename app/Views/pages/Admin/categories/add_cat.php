@@ -8,7 +8,7 @@
             <h2 style="text-align: center">Add Category</h2>
             <div class="form-group col-md-6">
                 <label for="inputCatname" class="form-label"><i class="icon-prepend fa fa-bars"></i>&nbsp;Category Name</label>
-                <input type="text" name="catname" class="form-control">
+                <input type="text" name="category_name" class="form-control">
             </div>
 
             <div class="form-group col-md-8">
