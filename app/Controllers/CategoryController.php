@@ -22,14 +22,14 @@ class CategoryController extends Controller{
     // insert data
     public function store()
     {
-        $userModel = new Category();
+        $categoryModel = new Category();
         $data = [
             'category_name' => $this->request->getVar('catname')
         ];
 
 
-        $userModel->insert($data);
-        $data['category'] = $userModel->orderBy('category_id', 'ASC')->findAll();
+        $categoryModel->insert($data);
+        $data['category'] = $categoryModel->orderBy('category_id', 'ASC')->findAll();
 
         return $this->response->redirect('/category');
     }

@@ -1,4 +1,4 @@
-<?= $this->extend('Layouts/master');?>
+<?= $this->extend('pages/Admin/dashboard/dashboardStart'); ?>
 <?= $this->section('content');?>
 <?php
 
@@ -25,10 +25,10 @@ if($role == 1){
 //print_r($segments);
 ?>
 <div class="row justify-content-center">
-    <div class="col-6 mt-5">
+    <div class="col-6" style="margin-top: 8rem;">
         <form class="booking row g-3 shadow-lg p-3 mb-5 bg-body rounded" method="post" id="add_create" name="add_create"
               action="<?php echo base_url('/UserController/edit_validation'); ?>">
-            <h2 style="text-align: center">Edit User</h2>
+            <h2 class="col-md-10" style="text-align: center">Edit User</h2>
             <div class="form-group col-md-6">
                 <label for="inputFname" class="form-label"><i class="icon-prepend fa fa-user"></i>&nbsp;First Name</label>
                 <input type="text" name="fname" class="form-control" value="<?php echo $fname;?>">

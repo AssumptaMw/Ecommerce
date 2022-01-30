@@ -1,8 +1,8 @@
-<?= $this->extend('/dashboard/dashboardStart');?>
+<?= $this->extend('pages/Admin/dashboard/dashboardStart') ?>
 <?= $this->section('content');?>
 
 <div class="row justify-content-center">
-    <div class="container mt-4">
+    <div class="container" style="margin-top: 8rem;">
         <div class="card bg-body rounded">
             <div class="card-header">
                 <div class="row flex-between-end">
@@ -65,6 +65,6 @@
 </script>
 
 <?= $this->endSection();?>
-<?= $this->extend('/dashboard/dashboardEnd');?>
+
 
 

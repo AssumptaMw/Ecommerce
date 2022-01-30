@@ -1,11 +1,11 @@
-<?= $this->extend('Layouts/master');?>
+<?= $this->extend('pages/Admin/dashboard/dashboardStart') ?>
 <?= $this->section('content');?>
 
 <div class="row justify-content-center">
-    <div class="col-6 mt-5">
+    <div class="col-6" style="margin-top: 8rem;">
         <form class="booking row g-3 shadow-lg p-3 mb-5 bg-body rounded" method="post" id="add_create" name="add_create"
               action="<?php echo base_url('/SubCategoryController/store'); ?>">
-            <h2 style="text-align: center">Add Sub-category</h2>
+            <h2 class="col-md-10" style="text-align: center">Add Sub-category</h2>
             <div class="form-group col-md-6">
                 <label for="inputSubcatname" class="form-label"><i class="icon-prepend fa fa-bars"></i>&nbsp;Sub-category Name*</label>
                 <input type="text" name="subcatname" class="form-control">
@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-12">
                 <label for="description">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>

@@ -1,14 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Subcategories View</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
+<?= $this->extend('pages/Admin/dashboard/dashboardStart') ?>
+<?= $this->section('content');?>
+
 <div class="row justify-content-center">
-    <div class="container mt-4">
+    <div class="container" style="margin-top: 8rem;">
         <div class="card bg-body rounded">
             <div class="card-header">
                 <div class="row flex-between-end">
@@ -65,5 +59,4 @@
         $('#users-list').DataTable();
     } );
 </script>
-</body>
-</html>
+<?= $this->endSection();?>
