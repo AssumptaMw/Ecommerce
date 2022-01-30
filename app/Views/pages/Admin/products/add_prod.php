@@ -12,8 +12,22 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label class="form-label" for="sub_category_id">Subcategory</label>
-                <input type="number" name="subcategory_id" class="form-control">
+                <label class="form-label" for="sub_category_id">Category</label>
+                <select name="subcategory_id" id="subcategory_id" class="form-control">
+                    <option selected hidden value="">Choose Category</option>
+                    <option value="Men-Formal">Men-Formal</option>
+                    <option value="Men-Casual">Men-Casual</option>
+                    <option value="Men-Sportswear">Men-Sportswear</option>
+                    <option value="Women-Formal">Women-Formal</option>
+                    <option value="Women-Casual">Women-Casual</option>
+                    <option value="Women-Sportswear">Women-Sportswear</option>
+                    <option value="Children-Formal">Children-Formal</option>
+                    <option value="Children-Casual">Children-Casual</option>
+                    <option value="Children-Sportswear">Children-Sportswear</option>
+                    <option value="Pets-Cats">Pets-Cats</option>
+                    <option value="Pets-Dogs">Pets-Dogs</option>
+                    <option value="Pets-Other">Pets-Other</option>
+                </select>
             </div>
 
             <div class="form-group col-md-6">
@@ -28,7 +42,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Image</label>
-                <input type="file" class="form-control" name="image" id="image" aria-describedby="emailHelp">
+                <input type="file" class="form-control" name="product_image" id="image" aria-describedby="emailHelp">
             </div>
 
             <div class="form-group col-md-10">

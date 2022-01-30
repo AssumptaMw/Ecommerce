@@ -24,7 +24,7 @@ class CategoryController extends Controller{
     {
         $categoryModel = new Category();
         $data = [
-            'category_name' => $this->request->getVar('catname')
+            'category_name' => $this->request->getVar('category_name')
         ];
 
 

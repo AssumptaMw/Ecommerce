@@ -36,13 +36,14 @@
                         <tr>
                             <td><?php echo $product['product_id']; ?></td>
                             <td><?php echo $product['product_name']; ?></td>
-                            <td><?php echo $product['category_name']; ?></td>
+                            <td><?php echo $product['category']; ?></td>
                             <td><?php echo $product['created_by']; ?></td>
                             <td><?php echo $product['unit_price']; ?></td>
                             <td><?php echo $product['available_quantity']; ?></td>
                             <td>
-                                <a href="<?= route_to('admin.products.edit', $product->id) ?>" class="btn btn-sm btn-primary rounded-circle shadow"><i class="fas fa-pen"></i></a>
+                                <a href="<?= base_url('ProductController/fetch_single_data/'.$product['product_id'])?>" class="btn btn-sm btn-primary rounded-circle shadow"><i class="fas fa-pen"></i></a>
                                 <a href="<?php echo base_url('delete/'.$product['product_id']);?>" class="btn btn-danger btn-sm">Delete</a>
+<!--                                .'/'.$product['product_name'].'/'.$product['category'].'/'.$product['created_by'].'/'.$product['unit_price'].'/'.$product['available_quantity'])-->
                             </td>
                         </tr>
                             <?php endforeach; ?>

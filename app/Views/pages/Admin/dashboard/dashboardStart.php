@@ -28,31 +28,31 @@
     <ul class="nav-links">
 
         <li>
-            <a href="../../home.php">
+            <a href="home">
                 <i class="fas fa-home"></i>
                 <span class="links_name">Home</span>
             </a>
         </li>
         <li>
-            <a href="../users/index.php">
+            <a href="/users">
                 <i class="bx bx-user"></i>
                 <span class="links_name">Users</span>
             </a>
         </li>
         <li>
-            <a href="../categories/index.php">
+            <a href="/category">
                 <i class='bx bx-book-alt' ></i>
                 <span class="links_name">Categories</span>
             </a>
         </li>
         <li>
-            <a href="../subcategories/index.php">
+            <a href="/subcategory">
                 <i class='bx bx-book-alt' ></i>
                 <span class="links_name">Subcategories</span>
             </a>
         </li>
         <li>
-            <a href="../products/index.php">
+            <a href="/product">
                 <i class='bx bx-list-ul' ></i>
                 <span class="links_name">Products</span>
             </a>

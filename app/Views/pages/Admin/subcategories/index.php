@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div class="row flex-between-end">
                     <div class="col-auto align-self-center">
-                        <h5 class="mb-0">Categories</h5>
+                        <h5 class="mb-0">SubCategories</h5>
                     </div>
                 </div>
             </div>

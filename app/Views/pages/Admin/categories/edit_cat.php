@@ -8,10 +8,10 @@
             <h2 class="col-md-10" style="text-align: center">Edit Category</h2>
             <div class="form-group col-md-6">
                 <label for="inputCatname" class="form-label"><i class="icon-prepend fa fa-bars"></i>&nbsp;Category Name</label>
-                <input type="text" name="catname" class="form-control" value="<?= $category_obj['category_name']; ?>">
+                <input type="text" name="category_name" class="form-control" value="<?= $category_obj['category_name']; ?>">
             </div>
 
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-12">
                 <label for="description">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
@@ -23,5 +23,5 @@
         </form>
     </div>
 </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <?= $this->endSection();?>

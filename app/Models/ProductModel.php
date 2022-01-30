@@ -13,7 +13,7 @@ class ProductModel extends Model{
         'product_description',
         'product_image',
         'unit_price',
-        'available_price',
+        'available_quantity',
         'subcategory_id',
         'created_at',
         'updated_at',

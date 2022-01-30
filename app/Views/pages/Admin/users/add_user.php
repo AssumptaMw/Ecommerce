@@ -39,7 +39,7 @@
                 </select>
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <!--                <label>Password</label>-->
                 <input type="password" name="password" class="form-control" value="123456" hidden>
             </div>
