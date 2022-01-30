@@ -56,22 +56,32 @@ $routes->get('/logout', 'SigninController::logout', ['as'=>'logout']);
 $routes->post('/login', 'SigninController::loginAuth',['as'=>'login']);
 $routes->get('/register', 'SignupController::index', ['as'=>'register']);
 $routes->post('/register', 'SignupController::store',['as'=>'register']);
-$routes->get('/add_user', 'UserController::create');
-$routes->get('/users', 'UserController::index');
+
 //  $routes->get('(:any)', 'Pages::view/$1'); //  This is a bad idea.
 
-// CRUD RESTful Routes
-$routes->get('users-list', 'UserController::index');
-$routes->get('user-form', 'UserController::create');
+//USER ROTES
+$routes->get('/add_user', 'UserController::create');
+//$routes->get('/edit_user', 'UserController::update');
+$routes->get('/users', 'UserController::index');
 $routes->post('submit-form', 'UserController::store');
-$routes->get('edit-view/(:num)', 'UserController::singleUser/$1');
+//$routes->get('edit-view/(:num)', 'UserController::singleUser/$1');
 $routes->post('update', 'UserController::update');
 $routes->get('delete/(:num)', 'UserController::delete/$1');
 
-//CATEGORIES
-$routes->get('users-list', 'CategoryController::index');
+//CATEGORIES ROUTES
 $routes->get('/add_cat', 'CategoryController::create');
+$routes->get('/category', 'CategoryController::index');
 $routes->post('submit-form', 'CategoryController::store');
+
+//SUBCATEGORIES ROUTES
+$routes->get('/add_subcat', 'SubCategoryController::create');
+$routes->get('/subcategory', 'SubCategoryController::index');
+$routes->post('submit-form', 'SubCategoryController::store');
+
+//PRODUCTS ROUTES
+$routes->get('/add_prod', 'ProductController::create');
+$routes->get('/products', 'ProductController::index');
+$routes->post('submit-form', 'ProductController::store');
 
 
 //API ROUTES

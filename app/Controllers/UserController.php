@@ -12,7 +12,7 @@ class UserController extends Controller{
         $userModel = new UserModel();
         $data['users'] = $userModel->orderBy('user_id', 'ASC')->findAll();
 
-        return view('pages/Admin/users/display_users', $data);
+        return view('pages/Admin/users/index', $data);
     }
 
     // add user form
@@ -49,7 +49,7 @@ class UserController extends Controller{
     public function singleUser($id = null){
         $userModel = new UserModel();
         $data['user_obj'] = $userModel->where('user_id', $id)->first();
-        return view('upsert', $data);
+        return view('edit_user', $data);
     }
 
     // update user data
@@ -64,9 +64,14 @@ class UserController extends Controller{
             'email'    => $this->request->getVar('email'),
             //'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
         ];
-        print_r($data);
-        //$userModel->update($id, $data);
-        //return $this->response->redirect(site_url('/users-list'));
+        if($data['role'] == 'admin'){
+            $data['role'] = 1;
+        }else{
+            $data['role'] = 2;
+        }
+        //print_r($data);
+        $userModel->update($id, $data);
+        return view('../Views/pages/Admin/users/index');
     }
 
     // delete user
@@ -75,4 +80,10 @@ class UserController extends Controller{
         $data['user'] = $userModel->where('user_id', $id)->delete($id);
         return $this->response->redirect(site_url('/users-list'));
     }
+
+    public function test(){
+        return view('../Views/pages/Admin/users/edit_user');
+    }
+
+
 }

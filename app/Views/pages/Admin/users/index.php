@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Categories View</title>
+    <title>Users View</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -13,38 +13,42 @@
             <div class="card-header">
                 <div class="row flex-between-end">
                     <div class="col-auto align-self-center">
-                        <h5 class="mb-0">Categories</h5>
+                        <h5 class="mb-0">Users</h5>
                     </div>
                 </div>
             </div>
 
             <div class="card-body py-0 border-top">
                 <div class="d-flex justify-content-end">
-                    <a href="/add_cat" class="btn btn-success mb-2 mt-2" >Add Category</a>
+                    <a href="/add_user" class="btn btn-success mb-2 mt-2" >Add User</a>
                 </div>
 
                 <div class="mt-3">
                     <table class="table table-bordered" id="users-list" >
                         <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-<!--                            <th>No. of Subcategories</th>-->
-<!--                            <th>No. of Products</th>-->
-                            <th>Actions</th>
+                            <th>User Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Role</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if($category): ?>
-                            <?php foreach($category as $category): ?>
+                        <?php if($users): ?>
+                            <?php foreach($users as $user): ?>
                                 <tr>
-                                    <td><?php echo $category['category_id']; ?></td>
-                                    <td><?php echo $category['category_name']; ?></td>
-<!--                                    <td>--><?php //echo $user['last_name']; ?><!--</td>-->
-<!--                                    <td>--><?php //echo $user['email']; ?><!--</td>-->
+                                    <td><?php echo $user['user_id']; ?></td>
+                                    <td><?php echo $user['first_name']; ?></td>
+                                    <td><?php echo $user['last_name']; ?></td>
+                                    <td><?php echo $user['email']; ?></td>
+                                    <td><?php echo $user['gender']; ?></td>
+                                    <td><?php echo $user['role']; ?></td>
                                     <td>
-                                        <a href="<?php echo base_url('edit_cat/'.$category['category_id'].'/'.$category['category_name']);?>" class="btn btn-primary btn-sm">Edit</a>
-                                        <a href="<?php echo base_url('delete/'.$category['category_id']);?>" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="<?php echo base_url('UserController/test/'.$user['user_id'].'/'.$user['first_name'].'/'.$user['last_name'].'/'.$user['email'].'/'.$user['gender'].'/'.$user['role']);?>" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="<?php echo base_url('delete/'.$user['user_id']);?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -67,3 +71,5 @@
 </script>
 </body>
 </html>
+
+

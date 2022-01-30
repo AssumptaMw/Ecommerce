@@ -6,12 +6,12 @@ $edit_url = current_url(true);
 //echo $edit_url . '<br/>';
 $my_url = new \CodeIgniter\HTTP\URI($edit_url);
 $segments = $my_url->getSegments();
-$user_id = $segments[2];
-$fname = $segments[3];
-$lname = $segments[4];
-$email = $segments[5];
-$gender = $segments[6];
-$role = $segments[7];
+$user_id = $segments[3];
+$fname = $segments[4];
+$lname = $segments[5];
+$email = $segments[6];
+$gender = $segments[7];
+$role = $segments[8];
 $string_role = '';
 if($role == 1){
     $string_role .= 'Administrator';

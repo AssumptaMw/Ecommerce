@@ -49,9 +49,8 @@
                     description: {
                         required: "Please enter the category description",
                         minlength: "Name should be at least 3 characters"
-                    },
-                }
-            })
+                    }
+            });
         }
     </script>
 <?= $this->endSection();?>
